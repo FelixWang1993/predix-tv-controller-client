@@ -9,7 +9,7 @@ define(['angular', './px-module'], function(angular, sampleModule) {
 	    		angular.forEach(data, function(obj,index,array){
 					var item = [];
 					item[0] = obj.time;
-					item[1] = parseInt(obj.value)/10;
+					item[1] = parseInt(obj.value);
 					barData[index] = item;
 					console.log(barData[index]);
 				});
@@ -23,7 +23,7 @@ define(['angular', './px-module'], function(angular, sampleModule) {
 	    		angular.forEach(data, function(obj,index,array){
 					var item = [];
 					item[0] = obj.time;
-					item[1] = parseInt(obj.value)/10;
+					item[1] = parseInt(obj.value);
 					barData[index] = item;
 					console.log(barData[index]);
 				});
