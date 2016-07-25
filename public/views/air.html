@@ -1,50 +1,76 @@
   <style type="text/css">
   	.box1{width:100%;float:left;}
 
-      .gbox{height:440px;box-shadow:0 0px 5px #ccc;padding:15px;margin-bottom:30px;margin-left:30px;margin-right:30px;position:relative;background-color:#F2F2F2;}
+      .gbox{height:500px;box-shadow:0 0px 5px #ccc;padding:15px;margin-bottom:30px;margin-left:30px;margin-right:30px;position:relative;background-color:#F2F2F2;}
       .pieChart{position: relative;display: inline-block;width: 110px;height: 110px;margin-top: 20px;margin-left: 140px;text-align: center;}
       .pieChart canvas {position: absolute;top: -15px;left: -15px;}
       .percent {display: inline-block;line-height: 110px;z-index: 2;font-size: 80px;}
+      .dot{background: #3ebf6c;border: 1px;border-radius: 50%;width:17px; height:17px;float: left;margin-top: 3px;margin-left: 13px;}
+      .air{border: 1px;border-radius: 10%; background: #f8f8f8;height: 206px;width: 240px;position: absolute;top: 25px;left: 14px;}
+      .air p{font-size: 20px;margin-top: 12px;margin-left: 10px;}
+      .air span{font-size: 22px;margin-left: 2px;color: #0944ba;}
+      .history{border: 1px;border-radius: 5%; background: #f8f8f8;height: 215px;width: 620px;position: absolute;top: 25px;right: 20px;}
+      .historytitle{position: absolute;top: 6px;left: 38%;font-size: 22px; color: #0944ba;}
+      .historynametitle{position: absolute;top: 65px;width: 100%;height: 30px;}
+      .historynametitle span{float: left; margin-left: 18%;font-size: 20px;color: #d7af0c;}
+      .historynumber{position: absolute;top: 110px;width: 100%;height: 30px;}
+      .historynumber span{float: left; margin-left: 12%;font-size: 26px;color: #00deec;}
+      .history2{border: 1px;border-radius: 5%; background: #f8f8f8;height: 215px;width: 620px;position: absolute;top: 260px;right: 20px;}
   </style>
 
-  <script>
-  $(document).ready(function () {
-        $(function() {
-            $('.pieChart').easyPieChart({
-               easing: 'easeOutElastic',
-          delay: 3000,
-          barColor: '#69c',
-          trackColor: '#ace',
-          scaleColor: false,
-          lineWidth: 15,
-                  trackWidth: 15,
-                  size: 150,
-          lineCap: 'butt'
-            });
-        });
-    });
-  </script>
 
   <px-card icon="fa-suitcase" header-text="Air Quality" chevron>
       <div class="box1">
 
         <div class="gbox">
 
-         <div class="pieChart" data-percent="100" >
-         <span class="percent">{{pm25.value}}</span>
-         </div>
+         <div class="air">
+           <div><p style="font-size: 24px;margin-top: 12px;margin-left: 19px;color: #0944ba;">Current Air Quality</p></div>
 
-        <div class="pieChart" data-percent="100" >
-         <span class="percent">{{pm10.value}}</span>
-         </div>
+           <div>
+           <div class="dot"></div>
+           <p>&nbsp;&nbsp;PM2.5 <span>{{pm25.value}} μg/m3</span></p>
+           </div>
+           
+           <div>
+           <div class="dot"></div>
+           <p>&nbsp;&nbsp;PM 10 <span>{{pm10.value}} μg/m3</span></p>
+           </div>
+   
+           <div>
+           <div class="dot"></div>
+           <p>&nbsp;&nbsp;PM1.0 <span>{{pm1.value}} μg/m3</span></p>
+           </div>
+      </div>
 
-         <div class="pieChart" data-percent="100" >
-         <span class="percent">{{pm1.value}}</span>
-         </div>
+        <div class="history">
+          <div class="historytitle"><p>Max Value For Today</p></div>
+          <div class="historynametitle">
+          <span>PM 1.0</span>
+          <span>PM 2.5</span>
+          <span>PM 10</span>
+          </div>
+          <div class="historynumber">
+            <span>50 μg/m3</span>
+            <span>50 μg/m3</span>
+            <span>50 μg/m3</span>
+          </div>
+        </div>
 
-        <p>pm 2.5: {{pm25.value}} μg/m3</p>
-        <p>pm 10: {{pm10.value}} μg/m3</p>
-        <p>pm 1.0: {{pm1.value}} μg/m3</p>
+        <div class="history2">
+          <div class="historytitle"><p>Min Value For Today</p></div>
+          <div class="historynametitle">
+          <span>PM 1.0</span>
+          <span>PM 2.5</span>
+          <span>PM 10</span>
+          </div>
+          <div class="historynumber">
+            <span>50 μg/m3</span>
+            <span>50 μg/m3</span>
+            <span>50 μg/m3</span>
+          </div>
+        </div>
+
         </div>
 
       </div>
