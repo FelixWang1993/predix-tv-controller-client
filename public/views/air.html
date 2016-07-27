@@ -16,6 +16,9 @@
       .historynumber{position: absolute;top: 110px;width: 100%;height: 30px;}
       .historynumber span{float: left; margin-left: 12%;font-size: 26px;color: #00deec;}
       .history2{border: 1px;border-radius: 5%; background: #f8f8f8;height: 215px;width: 620px;position: absolute;top: 260px;right: 20px;}
+      .airclearner{border: 1px;border-radius: 10%; background: #f8f8f8;height: 190px;width: 240px;position: absolute;bottom: 20px;left: 14px;}
+      .airclearnerTitle{font-size: 22px;margin-top: 25px;margin-left: 16px;color: #0944ba;}
+      .airclearnerStatus{font-size: 32px;margin-top: 40px;margin-left: 40px;color: #3ebf6c;}
   </style>
 
 
@@ -51,9 +54,9 @@
           <span>PM 10</span>
           </div>
           <div class="historynumber">
-            <span>50 μg/m3</span>
-            <span>50 μg/m3</span>
-            <span>50 μg/m3</span>
+            <span>{{pm1max.value}} μg/m3</span>
+            <span>{{pm25max.value}} μg/m3</span>
+            <span>{{pm10max.value}} μg/m3</span>
           </div>
         </div>
 
@@ -65,11 +68,16 @@
           <span>PM 10</span>
           </div>
           <div class="historynumber">
-            <span>50 μg/m3</span>
-            <span>50 μg/m3</span>
-            <span>50 μg/m3</span>
+            <span>{{pm1min.value}} μg/m3</span>
+            <span>{{pm25min.value}} μg/m3</span>
+            <span>{{pm10min.value}} μg/m3</span>
           </div>
         </div>
+
+             <div class="airclearner">
+               <p class="airclearnerTitle">Air Cleaner Machine</p>
+               <p class="airclearnerStatus">Running</p>
+             </div>
 
         </div>
 
