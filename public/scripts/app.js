@@ -44,7 +44,8 @@ define([
             tabs: [
                 {icon: 'fa-tachometer', state: 'index', label: 'Dashboards'},
                 {icon: 'fa-tachometer', state: 'temperature', label: 'Temperature'},
-                {icon: 'fa-tachometer', state: 'air', label: 'Air'}
+                {icon: 'fa-tachometer', state: 'air', label: 'Air'},
+                {icon: 'fa-rss', state: 'tvController', label: 'TV Controller'}
             ]
         };
 

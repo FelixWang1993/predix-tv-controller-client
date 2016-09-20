@@ -49,6 +49,11 @@ define(['angular', 'angular-ui-router'], function(angular) {
                 controller: 'AirCtrl',
                 templateUrl: 'views/air.html'
             })
+            .state('TV-Controller', {
+                parent: 'secure',
+                url: '/tvController',
+                templateUrl: 'views/tvController.html'
+            });
             ;
 
 
