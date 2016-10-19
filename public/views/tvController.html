@@ -5584,15 +5584,18 @@ body.loading .loading-modal {
           webSocket = new WebSocket("wss://controller-websocket-server-test.run.aws-usw02-pr.ice.predix.io/tvCtrl/"+nodeId);
          // 收到服务端消息
          webSocket.onmessage = function (msg) {
-            if(msg.data.toString()!=""&&msg.data.toString()!=null){
-                var eqmtNames=msg.data.toString().split("$");
-                if(eqmtNames.length>0){
-                    $("#eqmtSele").find("option").remove();
-                    for(var index in eqmtNames){
-                        if(eqmtNames[index]!=""){        
-                            $("#eqmtSele").append('<option value="'+eqmtNames[index]+'">'+eqmtNames[index]+'</option>');
-                        }
-                    }   
+            if(msg.data!=""&&msg.data!=null){
+                console.log(msg.data);
+                if(msg.data.toString().indexOf("$")!=-1){
+                    var eqmtNames=msg.data.toString().split("$");
+                    if(eqmtNames.length>0){
+                        $("#eqmtSele").find("option").remove();
+                        for(var index in eqmtNames){
+                            if(eqmtNames[index]!=""&&eqmtNames[index].indexOf("user")==-1){        
+                                $("#eqmtSele").append('<option value="'+eqmtNames[index]+'">'+eqmtNames[index]+'</option>');
+                            }
+                        }   
+                    }
                 }
             }
         };
@@ -5610,7 +5613,7 @@ body.loading .loading-modal {
                     webSocket = null;
                     tryTime++;
                     initSocket();
-                 }, 500);
+                 }, 1000);
                  } else {
                     tryTime = 0;
                 }
